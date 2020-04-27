@@ -14,6 +14,13 @@
 		3F6BFB3424566DA40027767B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6BFB3224566DA40027767B /* LaunchScreen.storyboard */; };
 		3F6BFB3D245672490027767B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3F6BFB3C245672490027767B /* Kingfisher */; };
 		3F6BFB432456787E0027767B /* NewsstandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB422456787E0027767B /* NewsstandViewController.swift */; };
+		3F6BFB4524567C970027767B /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4424567C970027767B /* CustomFlowLayout.swift */; };
+		3F6BFB4724567CDE0027767B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4624567CDE0027767B /* CollectionViewCell.swift */; };
+		3F6BFB4924567CF10027767B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4824567CF10027767B /* TableViewCell.swift */; };
+		3F6BFB4B24567D7B0027767B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4A24567D7B0027767B /* Category.swift */; };
+		3F6BFB4D24567E750027767B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4C24567E750027767B /* News.swift */; };
+		3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4E24567F700027767B /* NewsListViewController.swift */; };
+		3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,13 @@
 		3F6BFB3324566DA40027767B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F6BFB3524566DA40027767B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6BFB422456787E0027767B /* NewsstandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsstandViewController.swift; sourceTree = "<group>"; };
+		3F6BFB4424567C970027767B /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		3F6BFB4624567CDE0027767B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		3F6BFB4824567CF10027767B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3F6BFB4A24567D7B0027767B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		3F6BFB4C24567E750027767B /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		3F6BFB4E24567F700027767B /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,8 @@
 			children = (
 				3F6BFB2B24566D9F0027767B /* ViewController.swift */,
 				3F6BFB422456787E0027767B /* NewsstandViewController.swift */,
+				3F6BFB4E24567F700027767B /* NewsListViewController.swift */,
+				3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -82,6 +98,8 @@
 		3F6BFB3F2456783C0027767B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3F6BFB4A24567D7B0027767B /* Category.swift */,
+				3F6BFB4C24567E750027767B /* News.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				3F6BFB412456785E0027767B /* Cells */,
+				3F6BFB4424567C970027767B /* CustomFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +116,8 @@
 		3F6BFB412456785E0027767B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3F6BFB4624567CDE0027767B /* CollectionViewCell.swift */,
+				3F6BFB4824567CF10027767B /* TableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -179,8 +200,15 @@
 			files = (
 				3F6BFB2C24566D9F0027767B /* ViewController.swift in Sources */,
 				3F6BFB2824566D9F0027767B /* AppDelegate.swift in Sources */,
+				3F6BFB4724567CDE0027767B /* CollectionViewCell.swift in Sources */,
+				3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */,
+				3F6BFB4D24567E750027767B /* News.swift in Sources */,
 				3F6BFB432456787E0027767B /* NewsstandViewController.swift in Sources */,
+				3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */,
+				3F6BFB4524567C970027767B /* CustomFlowLayout.swift in Sources */,
+				3F6BFB4924567CF10027767B /* TableViewCell.swift in Sources */,
 				3F6BFB2A24566D9F0027767B /* SceneDelegate.swift in Sources */,
+				3F6BFB4B24567D7B0027767B /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,44 @@
 import UIKit
 
 class NewsstandViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .blue
-        // Do any additional setup after loading the view.
+    
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        collectionView.collectionViewLayout =  CustomFlowLayout()
+        return collectionView
+    }()
+    
+    let dummyData: [Category] = [
+        Category(title: "Business"),
+        Category(title: "Entertainment"),
+        Category(title: "Health"),
+        Category(title: "Science"),
+        Category(title: "Technology"),
+        Category(title: "Sports")
+    ]
+    
+    override func loadView() {
+        super.loadView()
+        view.addSubview(collectionView)
     }
     
-//    func 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 
+}
+
+extension NewsstandViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dummyData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
 }
