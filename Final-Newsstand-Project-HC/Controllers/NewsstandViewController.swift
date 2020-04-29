@@ -30,6 +30,8 @@ class NewsstandViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        self.title = "Newsstand"
+        self.view.backgroundColor = .white
         view.addSubview(collectionView)
     }
     
@@ -46,7 +48,17 @@ extension NewsstandViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        let category = dummyData[indexPath.row]
+        cell.cat = category
+        cell.backgroundColor = .cyan
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: CollectionViewCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+//        cell.backgroundColor = .brown
+        print("Selected an Item at \(indexPath.row)")
     }
     
 }
