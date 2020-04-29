@@ -19,6 +19,7 @@ class NewsContentsViewController: UIViewController {
         text.backgroundColor = .white
         text.textColor = .black
         text.textAlignment = .justified
+//        text.font = UIFont(name: "Ariel", size: 30)
         text.isEditable = false
         return text
     }()

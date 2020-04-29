@@ -19,7 +19,7 @@ class NewsListViewController: UIViewController {
     let dummyNews: [News] = [
         News(title: "Fire Started", body: "Fire at 11 am in this town caused by dog"),
         News(title: "Boy Dies", body: "Boy fakes death to get out of school"),
-        News(title: "Scandal", body: "Donald Trump cheats on wife, no one is suprised.")
+        News(title: "Scandal", body: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
     ]
 
     override func viewDidLoad() {

@@ -14,7 +14,8 @@ class TableViewCell: UITableViewCell {
     var data: News? {
         didSet {
             guard let data = data else { return }
-            newsLabel.text = data.title
+            self.textLabel?.text = data.title
+//            self.text = data.title
         }
     }
     
@@ -47,13 +48,13 @@ class TableViewCell: UITableViewCell {
     }
     
     func setup(){
-        self.contentView.addSubview(newsLabel)
-        NSLayoutConstraint.activate([
-            newsLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            newsLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
-            newsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-            newsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
-        ])
+//        self.contentView.addSubview(newsLabel)
+//        NSLayoutConstraint.activate([
+//            newsLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
+//            newsLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
+//            newsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+//            newsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
+//        ])
     }
 
 }
