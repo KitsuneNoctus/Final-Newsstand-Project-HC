@@ -17,9 +17,9 @@ class NewsListViewController: UIViewController {
     }()
     
     let dummyNews: [News] = [
-        News(title: "Fire Started", body: "Fire at 11 am in this town caused by dog"),
-        News(title: "Boy Dies", body: "Boy fakes death to get out of school"),
-        News(title: "Scandal", body: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
+        News(title: "Fire Started", content: "Fire at 11 am in this town caused by dog"),
+        News(title: "Boy Dies", content: "Boy fakes death to get out of school"),
+        News(title: "Scandal", content: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
     ]
 
     override func viewDidLoad() {
@@ -64,7 +64,7 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
         let news = dummyNews[indexPath.row]
         let vc = NewsContentsViewController()
         vc.newsTitle = news.title
-        vc.news = news.body
+        vc.news = news.content
         self.navigationController?.pushViewController(vc, animated: true)
         print("News selected at \(indexPath.row)")
     }

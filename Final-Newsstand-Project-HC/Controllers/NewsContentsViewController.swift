@@ -23,6 +23,13 @@ class NewsContentsViewController: UIViewController {
         text.isEditable = false
         return text
     }()
+    
+    var newsImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        //TODO: Add so image adjusts properly to container
+        return image
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

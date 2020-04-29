@@ -21,6 +21,8 @@
 		3F6BFB4D24567E750027767B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4C24567E750027767B /* News.swift */; };
 		3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4E24567F700027767B /* NewsListViewController.swift */; };
 		3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */; };
+		3F7D34B52459372400C03403 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D34B42459372400C03403 /* Key.swift */; };
+		3F7D34B72459373200C03403 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D34B62459373200C03403 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		3F6BFB4C24567E750027767B /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		3F6BFB4E24567F700027767B /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentsViewController.swift; sourceTree = "<group>"; };
+		3F7D34B42459372400C03403 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		3F7D34B62459373200C03403 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		3F7D34B32459288300C03403 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3F7D34B42459372400C03403 /* Key.swift */,
+				3F7D34B62459373200C03403 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -209,8 +215,10 @@
 				3F6BFB2C24566D9F0027767B /* ViewController.swift in Sources */,
 				3F6BFB2824566D9F0027767B /* AppDelegate.swift in Sources */,
 				3F6BFB4724567CDE0027767B /* CollectionViewCell.swift in Sources */,
+				3F7D34B72459373200C03403 /* NetworkManager.swift in Sources */,
 				3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */,
 				3F6BFB4D24567E750027767B /* News.swift in Sources */,
+				3F7D34B52459372400C03403 /* Key.swift in Sources */,
 				3F6BFB432456787E0027767B /* NewsstandViewController.swift in Sources */,
 				3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */,
 				3F6BFB4524567C970027767B /* CustomFlowLayout.swift in Sources */,

@@ -11,5 +11,20 @@ import UIKit
 
 struct News {
     var title: String
-    var body: String
+    var content: String
+}
+
+struct NewsList: Decodable {
+   var news: [News]
+}
+
+extension News: Decodable{
+    enum NewsKeys: String, CodingKey{
+        case title
+        case body
+    }
+    
+//    init(from decoder: Decoder) throws {
+//
+//    }
 }
