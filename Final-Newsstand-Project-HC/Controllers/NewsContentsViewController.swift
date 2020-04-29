@@ -9,11 +9,35 @@
 import UIKit
 
 class NewsContentsViewController: UIViewController {
+    
+    var newsTitle: String = "Title"
+    var news: String = "The News"
+    
+    var newsContents: UITextView = {
+        let text = UITextView()
+        text.translatesAutoresizingMaskIntoConstraints = false
+        text.backgroundColor = .white
+        text.textColor = .black
+        text.textAlignment = .justified
+        text.isEditable = false
+        return text
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = newsTitle
+        setup()
+    }
+    
+    func setup(){
+        self.view.addSubview(newsContents)
+        NSLayoutConstraint.activate([
+            newsContents.topAnchor.constraint(equalTo: self.view.topAnchor),
+            newsContents.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            newsContents.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            newsContents.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ])
+        newsContents.text = news
     }
 
 }

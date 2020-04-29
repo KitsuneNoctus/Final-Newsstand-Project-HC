@@ -56,8 +56,10 @@ extension NewsstandViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell: CollectionViewCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+//        let cell: CollectionViewCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
 //        cell.backgroundColor = .brown
+        let vc = NewsListViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
         print("Selected an Item at \(indexPath.row)")
     }
     
