@@ -22,7 +22,11 @@
 		3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB4E24567F700027767B /* NewsListViewController.swift */; };
 		3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */; };
 		3F7D34B52459372400C03403 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D34B42459372400C03403 /* Key.swift */; };
-		3F7D34B72459373200C03403 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D34B62459373200C03403 /* NetworkManager.swift */; };
+		3F91DCAE245BD42000C3A12E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91DCAD245BD42000C3A12E /* APIClient.swift */; };
+		3F91DCB0245BD44600C3A12E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91DCAF245BD44600C3A12E /* Request.swift */; };
+		3F91DCB2245BD45400C3A12E /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91DCB1245BD45400C3A12E /* Encoder.swift */; };
+		3F91DCB4245BD49100C3A12E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91DCB3245BD49100C3A12E /* Response.swift */; };
+		3F91DCB8245BE83900C3A12E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91DCB7245BE83900C3A12E /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +46,11 @@
 		3F6BFB4E24567F700027767B /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		3F6BFB5124567FBC0027767B /* NewsContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentsViewController.swift; sourceTree = "<group>"; };
 		3F7D34B42459372400C03403 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		3F7D34B62459373200C03403 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3F91DCAD245BD42000C3A12E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3F91DCAF245BD44600C3A12E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		3F91DCB1245BD45400C3A12E /* Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		3F91DCB3245BD49100C3A12E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		3F91DCB7245BE83900C3A12E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +139,11 @@
 			isa = PBXGroup;
 			children = (
 				3F7D34B42459372400C03403 /* Key.swift */,
-				3F7D34B62459373200C03403 /* NetworkManager.swift */,
+				3F91DCAD245BD42000C3A12E /* APIClient.swift */,
+				3F91DCAF245BD44600C3A12E /* Request.swift */,
+				3F91DCB1245BD45400C3A12E /* Encoder.swift */,
+				3F91DCB3245BD49100C3A12E /* Response.swift */,
+				3F91DCB7245BE83900C3A12E /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -213,12 +225,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6BFB2C24566D9F0027767B /* ViewController.swift in Sources */,
+				3F91DCAE245BD42000C3A12E /* APIClient.swift in Sources */,
 				3F6BFB2824566D9F0027767B /* AppDelegate.swift in Sources */,
+				3F91DCB4245BD49100C3A12E /* Response.swift in Sources */,
 				3F6BFB4724567CDE0027767B /* CollectionViewCell.swift in Sources */,
-				3F7D34B72459373200C03403 /* NetworkManager.swift in Sources */,
 				3F6BFB5224567FBC0027767B /* NewsContentsViewController.swift in Sources */,
 				3F6BFB4D24567E750027767B /* News.swift in Sources */,
+				3F91DCB0245BD44600C3A12E /* Request.swift in Sources */,
+				3F91DCB2245BD45400C3A12E /* Encoder.swift in Sources */,
 				3F7D34B52459372400C03403 /* Key.swift in Sources */,
+				3F91DCB8245BE83900C3A12E /* NetworkManager.swift in Sources */,
 				3F6BFB432456787E0027767B /* NewsstandViewController.swift in Sources */,
 				3F6BFB4F24567F700027767B /* NewsListViewController.swift in Sources */,
 				3F6BFB4524567C970027767B /* CustomFlowLayout.swift in Sources */,

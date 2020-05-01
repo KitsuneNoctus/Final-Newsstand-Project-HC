@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-struct News {
+struct News{
     var title: String
+//    let urlToImage: String
     var content: String
 }
 
@@ -21,10 +22,19 @@ struct NewsList: Decodable {
 extension News: Decodable{
     enum NewsKeys: String, CodingKey{
         case title
-        case body
+//        case urlToImage
+        case content
     }
     
-//    init(from decoder: Decoder) throws {
-//
+//    enum PreviewImageURLKeys: String, CodingKey {
+//       // for all posts, we only want the 850px image
+//       // Check out the
+//       case imageURL = "850px"
 //    }
+    
+    init(from decoder: Decoder) throws {
+        let newsConatiner = try decoder.container(keyedBy: NewsKeys.self)
+        title = try newsConatiner.decode(String.self, forKey: .title)
+        content = try newsConatiner.decode(String.self, forKey: .content)
+    }
 }

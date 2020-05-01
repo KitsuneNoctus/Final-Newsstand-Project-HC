@@ -8,6 +8,8 @@
 
 import Foundation
 
-enum SecretKey{
-//    case apiKey = ""
-}
+//public struct key{
+//    let apiKey = "3a39d579b15c40fb940421d81a2378a3"
+//}
+
+public let apiKey = "3a39d579b15c40fb940421d81a2378a3"

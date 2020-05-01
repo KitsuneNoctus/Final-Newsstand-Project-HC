@@ -25,6 +25,13 @@ class TableViewCell: UITableViewCell {
         newsLabel.textColor = .black
         return newsLabel
     }()
+    
+    var newsImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
+        return image
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()

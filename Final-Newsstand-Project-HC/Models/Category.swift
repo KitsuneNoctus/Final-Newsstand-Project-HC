@@ -12,3 +12,7 @@ import UIKit
 struct Category{
     var title: String
 }
+
+enum Categories{
+    case general
+}
