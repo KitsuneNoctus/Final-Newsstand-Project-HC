@@ -10,24 +10,46 @@ import UIKit
 
 class NewsListViewController: UIViewController {
     
+    var category = "general"
+    
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    let dummyNews: [News] = [
-        News(title: "Fire Started", content: "Fire at 11 am in this town caused by dog"),
-        News(title: "Boy Dies", content: "Boy fakes death to get out of school"),
-        News(title: "Scandal", content: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
-    ]
+//    let dummyNews: [News] = [
+//        News(title: "Fire Started", content: "Fire at 11 am in this town caused by dog"),
+//        News(title: "Boy Dies", content: "Boy fakes death to get out of school"),
+//        News(title: "Scandal", content: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
+//    ]
+    
+    var newsArts: [News] = [] {
+       didSet {
+           tableView.reloadData()
+       }
+    }
+    
+    var networkManager = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.title = "News"
         setTable()
+        updateFeed()
         // Do any additional setup after loading the view.
+    }
+    
+    func updateFeed(){
+        networkManager.getNews(category){ result in
+            switch result {
+            case let .success(news):
+              self.newsArts = news
+            case let .failure(error):
+              print(error)
+            }
+        }
     }
     
     func setTable(){
@@ -50,18 +72,18 @@ class NewsListViewController: UIViewController {
 
 extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dummyNews.count
+        return self.newsArts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        let news = dummyNews[indexPath.row]
+        let news = newsArts[indexPath.row]
         cell.data = news
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let news = dummyNews[indexPath.row]
+        let news = newsArts[indexPath.row]
         let vc = NewsContentsViewController()
         vc.newsTitle = news.title
         vc.news = news.content

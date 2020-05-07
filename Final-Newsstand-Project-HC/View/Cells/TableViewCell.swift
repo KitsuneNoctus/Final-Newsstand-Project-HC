@@ -19,6 +19,14 @@ class TableViewCell: UITableViewCell {
         }
     }
     
+    var newStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.spacing = 10
+        return stack
+    }()
+    
     var newsLabel: UILabel = {
         let newsLabel = UILabel()
         newsLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -55,13 +63,13 @@ class TableViewCell: UITableViewCell {
     }
     
     func setup(){
-//        self.contentView.addSubview(newsLabel)
-//        NSLayoutConstraint.activate([
-//            newsLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-//            newsLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
-//            newsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-//            newsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
-//        ])
+        self.contentView.addSubview(newStack)
+        NSLayoutConstraint.activate([
+            newStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
+            newStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
+            newStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+            newStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
+        ])
     }
 
 }
