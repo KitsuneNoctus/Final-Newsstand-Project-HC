@@ -29,8 +29,15 @@ class NetworkManager{
                 return completion(Result.failure(EndPointError.couldNotParse))
             }
             print(result)
-            
-            let news = result.news
+//            do{
+//                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+//                print(json)
+//
+//            }catch{
+//
+//            }
+                        
+            let news = result.articles
             
             DispatchQueue.main.async {
                 completion(Result.success(news))
@@ -39,10 +46,7 @@ class NetworkManager{
         
         task.resume()
     }
-    
-//    func getArticle(){
-//
-//    }
+
     
     enum EndPoints {
         case articles(category: String)
@@ -75,7 +79,8 @@ class NetworkManager{
             case .articles(let category):
                 return[
                     "country":"us",
-                    "category":category
+                    "category":category,
+                    "apiKey":apiKey
                 ]
             case .contents:
                 return[

@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+struct ArticleList{
+}
+
+//MARK: News
 struct News{
     var title: String
 //    let urlToImage: String
@@ -16,7 +20,7 @@ struct News{
 }
 
 struct NewsList: Decodable {
-   var news: [News]
+   var articles: [News]
 }
 
 extension News: Decodable{
