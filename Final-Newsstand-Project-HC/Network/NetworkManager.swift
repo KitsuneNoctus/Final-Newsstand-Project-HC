@@ -28,14 +28,7 @@ class NetworkManager{
             guard let result = try? JSONDecoder().decode(NewsList.self, from: data) else{
                 return completion(Result.failure(EndPointError.couldNotParse))
             }
-            print(result)
-//            do{
-//                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-//                print(json)
-//
-//            }catch{
-//
-//            }
+//            print(result)
                         
             let news = result.articles
             

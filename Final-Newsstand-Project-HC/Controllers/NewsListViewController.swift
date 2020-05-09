@@ -18,12 +18,6 @@ class NewsListViewController: UIViewController {
         return tableView
     }()
     
-//    let dummyNews: [News] = [
-//        News(title: "Fire Started", content: "Fire at 11 am in this town caused by dog"),
-//        News(title: "Boy Dies", content: "Boy fakes death to get out of school"),
-//        News(title: "Scandal", content: "Donald Trump cheats on wife, no one is suprised. As people continue to comment we will update. in other news, lets look at baseball. What a bad time to be a dodgers fan, Thats all for sports. Dont be lazy this weekend.")
-//    ]
-    
     var newsArts: [News] = [] {
        didSet {
            tableView.reloadData()
@@ -58,6 +52,7 @@ class NewsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         self.view.backgroundColor = .white
+        tableView.rowHeight = 100
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -85,8 +80,9 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let news = newsArts[indexPath.row]
         let vc = NewsContentsViewController()
-        vc.newsTitle = news.title
-        vc.news = news.content
+        //MARK: Change this later
+        vc.newsTitle = news.title!
+        vc.news = news.content!
         self.navigationController?.pushViewController(vc, animated: true)
         print("News selected at \(indexPath.row)")
     }

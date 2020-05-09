@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TableViewCell: UITableViewCell {
     static var identifier = "NewsCell"
@@ -14,8 +15,11 @@ class TableViewCell: UITableViewCell {
     var data: News? {
         didSet {
             guard let data = data else { return }
-            self.textLabel?.text = data.title
+//            self.textLabel?.text = data.title
 //            self.text = data.title
+            let url = URL(string: data.urlToImage!)
+            imageView!.kf.setImage(with: url)
+            self.newsLabel.text = data.title
         }
     }
     
@@ -37,6 +41,7 @@ class TableViewCell: UITableViewCell {
     var newsImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.layer.cornerRadius = 10
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -69,6 +74,14 @@ class TableViewCell: UITableViewCell {
             newStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
             newStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
             newStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
+        ])
+        
+        newStack.addArrangedSubview(newsLabel)
+        newStack.addArrangedSubview(newsImage)
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 80),
+            widthAnchor.constraint(equalTo: newsImage.heightAnchor, multiplier: 16/9),
+            trailingAnchor.constraint(equalTo: newStack.trailingAnchor)
         ])
     }
 
