@@ -12,7 +12,8 @@ import UIKit
 //MARK: News
 struct News: Decodable{
     var title: String?
-    let urlToImage: String?
+    var url: String?
+    var urlToImage: String?
     var content: String?
 }
 

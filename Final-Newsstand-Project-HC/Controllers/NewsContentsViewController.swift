@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import WebKit
 
-class NewsContentsViewController: UIViewController {
+class NewsContentsViewController: UIViewController, WKUIDelegate {
     
     var newsTitle: String = "Title"
     var news: String = "The News"
+    var theNews: String = ""
+    
+    lazy var webView: WKWebView = {
+        let webConfiguration = WKWebViewConfiguration()
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
     
     var newsContents: UITextView = {
         let text = UITextView()
@@ -34,18 +44,21 @@ class NewsContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = newsTitle
+//        print(theNews)
         setup()
+        let myURL = URL(string:theNews)
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
     
     func setup(){
-        self.view.addSubview(newsContents)
+        self.view.backgroundColor = .white
         NSLayoutConstraint.activate([
-            newsContents.topAnchor.constraint(equalTo: self.view.topAnchor),
-            newsContents.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            newsContents.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            newsContents.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            webView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
-        newsContents.text = news
     }
 
 }

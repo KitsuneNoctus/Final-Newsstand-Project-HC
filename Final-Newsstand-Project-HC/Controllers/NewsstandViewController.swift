@@ -18,14 +18,15 @@ class NewsstandViewController: UIViewController {
         collectionView.collectionViewLayout =  CustomFlowLayout()
         return collectionView
     }()
-    
-    let dummyData: [Category] = [
-        Category(title: "Business"),
-        Category(title: "Entertainment"),
-        Category(title: "Health"),
-        Category(title: "Science"),
-        Category(title: "Technology"),
-        Category(title: "Sports")
+
+    let categories: [Category] = [
+        Category(title: "business"),
+        Category(title: "entertainment"),
+        Category(title: "general"),
+        Category(title: "health"),
+        Category(title: "science"),
+        Category(title: "sports"),
+        Category(title: "technology")
     ]
     
     override func loadView() {
@@ -44,21 +45,20 @@ class NewsstandViewController: UIViewController {
 
 extension NewsstandViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dummyData.count
+        return self.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        let category = dummyData[indexPath.row]
+        let category = categories[indexPath.row]
         cell.cat = category
-        cell.backgroundColor = .cyan
+        cell.backgroundColor = .blue
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell: CollectionViewCell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
-//        cell.backgroundColor = .brown
         let vc = NewsListViewController()
+        vc.category = categories[indexPath.row].title
         self.navigationController?.pushViewController(vc, animated: true)
         print("Selected an Item at \(indexPath.row)")
     }

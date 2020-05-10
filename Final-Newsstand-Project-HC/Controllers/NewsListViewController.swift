@@ -10,7 +10,7 @@ import UIKit
 
 class NewsListViewController: UIViewController {
     
-    var category = "general"
+    var category: String = "general"
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -32,7 +32,6 @@ class NewsListViewController: UIViewController {
         self.title = "News"
         setTable()
         updateFeed()
-        // Do any additional setup after loading the view.
     }
     
     func updateFeed(){
@@ -80,9 +79,21 @@ extension NewsListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let news = newsArts[indexPath.row]
         let vc = NewsContentsViewController()
-        //MARK: Change this later
+        //Assigning Title
         vc.newsTitle = news.title!
-        vc.news = news.content!
+        //Assigning Content
+        guard let newsContent = news.content else{
+            print("No content")
+            return
+        }
+        vc.news = newsContent
+        //Assigning URL news
+        guard let newsURL = news.url else {
+            print("No URL found")
+            return
+        }
+        vc.theNews = newsURL
+        //
         self.navigationController?.pushViewController(vc, animated: true)
         print("News selected at \(indexPath.row)")
     }

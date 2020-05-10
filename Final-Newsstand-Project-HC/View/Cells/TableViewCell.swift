@@ -15,10 +15,14 @@ class TableViewCell: UITableViewCell {
     var data: News? {
         didSet {
             guard let data = data else { return }
-//            self.textLabel?.text = data.title
-//            self.text = data.title
-            let url = URL(string: data.urlToImage!)
-            imageView!.kf.setImage(with: url)
+            //Getting Image
+            guard let newsImg = data.urlToImage else {
+                print("fail")
+                return
+            }
+            let iUrl = URL(string: newsImg)
+            imageView!.kf.setImage(with: iUrl)
+            //Getting Title
             self.newsLabel.text = data.title
         }
     }
