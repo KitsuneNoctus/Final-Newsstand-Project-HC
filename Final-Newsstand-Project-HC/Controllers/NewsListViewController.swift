@@ -51,7 +51,7 @@ class NewsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         self.view.backgroundColor = .white
-        tableView.rowHeight = 100
+        tableView.rowHeight = 125
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
