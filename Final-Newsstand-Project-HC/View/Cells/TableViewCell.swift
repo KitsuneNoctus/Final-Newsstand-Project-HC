@@ -72,20 +72,25 @@ class TableViewCell: UITableViewCell {
     }
     
     func setup(){
-        self.contentView.addSubview(newStack)
-        NSLayoutConstraint.activate([
-            newStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            newStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
-            newStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
-            newStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
-        ])
+//        self.contentView.addSubview(newStack)
+//        NSLayoutConstraint.activate([
+//            newStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
+//            newStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10),
+//            newStack.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+//            newStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10)
+//        ])
         
-        newStack.addArrangedSubview(newsLabel)
-        newStack.addArrangedSubview(newsImage)
+//        newStack.addArrangedSubview(newsLabel)
+        self.contentView.addSubview(newsLabel)
+//        newStack.addArrangedSubview(newsImage)
+        self.contentView.addSubview(newsImage)
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 80),
-            widthAnchor.constraint(equalTo: newsImage.heightAnchor, multiplier: 16/9),
-            trailingAnchor.constraint(equalTo: newStack.trailingAnchor)
+            newsLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10),
+            newsLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 9/10),
+            newsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: 10),
+            newsImage.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 9/10),
+            newsImage.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            newsImage.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
 
