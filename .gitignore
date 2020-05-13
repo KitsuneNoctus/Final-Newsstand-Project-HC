@@ -3,7 +3,7 @@
 # Edit at https://www.gitignore.io/?templates=swift,swiftpackagemanager
 
 ##KEY
-Key.swift
+Network/Key.swift
 
 ### Swift ###
 # Xcode
