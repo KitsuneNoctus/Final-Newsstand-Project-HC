@@ -15,6 +15,7 @@ class NewsContentsViewController: UIViewController, WKUIDelegate {
     var news: String = "The News"
     var theNews: String = ""
     
+    //MARK: Web View
     lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
         let webView = WKWebView(frame: .zero, configuration: webConfiguration)
@@ -40,7 +41,8 @@ class NewsContentsViewController: UIViewController, WKUIDelegate {
         //TODO: Add so image adjusts properly to container
         return image
     }()
-
+    
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = newsTitle
@@ -53,11 +55,11 @@ class NewsContentsViewController: UIViewController, WKUIDelegate {
     
     func setup(){
         self.view.backgroundColor = .white
+        self.view.addSubview(webView)
         NSLayoutConstraint.activate([
             webView.topAnchor.constraint(equalTo: self.view.topAnchor),
             webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            webView.widthAnchor.constraint(equalTo: self.view.widthAnchor)
         ])
     }
 
