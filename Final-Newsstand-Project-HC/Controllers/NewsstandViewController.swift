@@ -33,6 +33,7 @@ class NewsstandViewController: UIViewController {
         super.loadView()
         self.title = "Newsstand"
         self.view.backgroundColor = .white
+        collectionView.backgroundColor = .white
         view.addSubview(collectionView)
     }
     
@@ -52,7 +53,7 @@ extension NewsstandViewController: UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         let category = categories[indexPath.row]
         cell.cat = category
-        cell.backgroundColor = .blue
+        cell.backgroundColor = UIColor(displayP3Red: 186/255, green: 234/255, blue: 250/255, alpha: 1.0)
         return cell
     }
     
